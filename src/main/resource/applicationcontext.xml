@@ -12,8 +12,9 @@
     <aop:config>
         <aop:aspect id="testAop" ref="myAop">
             <aop:pointcut id="target" expression="execution(* com.lc.model.User.*(..))"/>
-            <aop:before method="BeforeCall" pointcut-ref="target"/>
-            <aop:after-returning method="AfterCall" pointcut-ref="target"/>
+            <!--aop:before method="beforeCall" pointcut-ref="target" />
+            <aop:after-returning method="afterCall" pointcut-ref="target"/-->
+            <aop:around method="process" pointcut-ref="target"/>
         </aop:aspect>
     </aop:config>
 </beans>
