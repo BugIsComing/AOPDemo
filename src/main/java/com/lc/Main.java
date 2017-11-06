@@ -11,9 +11,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
     public static void main(String[]args){
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath*:applicationcontext.xml");
+
+        ClassPathXmlApplicationContext  ctx = new ClassPathXmlApplicationContext("classpath*:applicationcontext.xml");
         User obj = (User)ctx.getBean("user");
         obj.save();
-
+        obj.insert();
     }
 }
