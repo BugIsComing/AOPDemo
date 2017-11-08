@@ -1,7 +1,6 @@
-package com.lc;
+package com.lc.client;
 
 import com.lc.model.User;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,10 +10,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
     public static void main(String[]args){
-
         ClassPathXmlApplicationContext  ctx = new ClassPathXmlApplicationContext("classpath*:applicationcontext.xml");
         User obj = (User)ctx.getBean("user");
         obj.save();
-        obj.insert();
+        obj.insert(1);
     }
 }

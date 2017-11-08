@@ -13,11 +13,11 @@ public class User {
 
     }
     public void save(){
-        System.out.println("Save");
+        //System.out.println("Save");
     }
-    public int insert(){
+    public int insert(int arg){
         int result = 1;
-        System.out.println("result = " + result);
+        //System.out.println("result = " + result);
         return result;
     }
 }

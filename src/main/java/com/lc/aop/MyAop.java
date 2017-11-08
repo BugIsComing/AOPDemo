@@ -20,7 +20,16 @@ public class MyAop {
 
     public Object process(ProceedingJoinPoint point){
         Object proc = null;
-        System.out.println(point.getSignature().getName());
+        System.out.println("调用方法:" + point.getSignature().getName());
+        System.out.println("入参是:");
+        Object []args = point.getArgs();
+        String argName = null;
+        String argValue = null;
+        for (int i = 0; i<args.length; i++){
+            argName = args[i].toString();
+            System.out.println(argName);
+        }
+        System.out.println("出参是:" );
         try {
             //目标方法有返回才不为null，否则为null
            proc = point.proceed();
@@ -33,8 +42,6 @@ public class MyAop {
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }
-        String className = point.getTarget().getClass().getName();
-        System.out.println("BeforeCall " + className);
         return proc;
     }
 }
